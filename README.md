@@ -3,6 +3,7 @@ Github Art
 
 Python project to write string on Contributions Github account table
 
+![Github Contributions](docs/contributions.png)
 
 Install
 ------
