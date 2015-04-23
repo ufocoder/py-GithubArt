@@ -11,16 +11,17 @@ Python project to write string on Contributions Github account table
 Usage
 -----
 
-Install for PIP:
+Install from PIP:
 ```
 pip install github_art
 ```
 
+Create folder to build git project:
 ```
 mkdir /Users/user/build
 ```
 
-There's an example of script usage:
+And run python github_art, there's an example of script usage:
 
 ```
 python github_art/github_art/main.py \
@@ -31,7 +32,7 @@ python github_art/github_art/main.py \
 
 Options
 -------
-* string - your string [required]
+* string - your string [required parameter]
 * dictionary - letters or letters2x
 * path - there's a path to your github project [required parameter]
 * project - URL to your github project [required parameter]
