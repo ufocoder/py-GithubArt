@@ -3,18 +3,18 @@ from dateutil.relativedelta import relativedelta
 
 
 class GithubDatePoints(object):
-    HEIGHT = 7
-    WIDTH = 51
+    MAX_HEIGHT = 7
+    MAX_WIDTH = 51
 
     def __init__(self, pixel_set):
-
         self.__pixel_set = self.__normalize_pixel_set(pixel_set)
         self.__datetime_start_point = self.__get_datetime_start_point()
 
     def __normalize_pixel_set(self, pixel_set):
-        pixel_set = pixel_set[:self.HEIGHT]
-        for i in range(self.HEIGHT):
-            pixel_set[i] = pixel_set[i][:self.WIDTH]
+        size = min(len(pixel_set), self.MAX_HEIGHT)
+        pixel_set = pixel_set[:size]
+        for i in range(size):
+            pixel_set[i] = pixel_set[i][:self.MAX_WIDTH]
 
         return pixel_set
 
