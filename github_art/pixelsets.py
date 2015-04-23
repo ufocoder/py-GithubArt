@@ -32,9 +32,9 @@ class LettersPixelSet(PixetSet):
         return pixel_set
 
     def __normalize_pixel_set(self, pixel_set):
-        rows = [[] for _ in range(self.__letters.HEIGTH)]
+        rows = [[] for _ in range(self.__letters.HEIGHT)]
         for letter in pixel_set:
-            for i in range(self.__letters.HEIGTH):
+            for i in range(self.__letters.HEIGHT):
                 rows[i] = rows[i] + letter[i]
 
         return rows

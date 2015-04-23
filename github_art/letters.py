@@ -1,4 +1,4 @@
-HEIGTH = 5
+HEIGHT = 5
 
 space = [
     [0, 0],

@@ -1,4 +1,4 @@
-HEIGTH = 7
+HEIGHT = 7
 
 space = [
     [0, 0],
