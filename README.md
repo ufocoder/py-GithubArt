@@ -2,6 +2,7 @@ Github Art
 ==========
 
 [![Build Status](https://travis-ci.org/ufocoder/py-GithubArt.svg)](https://travis-ci.org/ufocoder/py-GithubArt)
+[![Coverage Status](https://coveralls.io/repos/ufocoder/py-GithubArt/badge.svg)](https://coveralls.io/r/ufocoder/py-GithubArt)
 
 Python project to write string on Contributions Github account table
 
