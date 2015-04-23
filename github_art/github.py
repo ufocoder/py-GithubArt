@@ -6,7 +6,7 @@ from pixelsets import LettersPixelSet
 
 
 class Github(object):
-    def __init__(self, string, cwd, size=None):
+    def __init__(self, string, cwd, size=1):
         self.__string = string
         self.__size = size
         self.__cwd = os.path.abspath(cwd)

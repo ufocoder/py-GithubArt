@@ -8,7 +8,7 @@ class PixetSet(object):
 
 
 class LettersPixelSet(PixetSet):
-    def __init__(self, string, size=None):
+    def __init__(self, string, size=1):
         self.__letters = self.__load_letters(size)
         self.__pixel_set = self.__form_pixel_set(string)
         self.__pixel_set = self.__normalize_pixel_set(self.__pixel_set)
@@ -16,8 +16,7 @@ class LettersPixelSet(PixetSet):
     def get_pixel_set(self):
         return self.__pixel_set
 
-    def __load_letters(self, size=None):
-        size = int(size) or 1
+    def __load_letters(self, size=1):
         if size == 2:
             return letters2x
         else:
