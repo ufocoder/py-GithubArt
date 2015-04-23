@@ -3,6 +3,7 @@ from distutils.core import setup
 setup(name='github_art',
       version='0.2',
       packages=['github_art'],
+      keywords = "github art contributions writer",
       description='Github Contributions table Writer. Just for fun',
       author='Sergey Ivanov',
       author_email='xufocoder@gmail.com',
