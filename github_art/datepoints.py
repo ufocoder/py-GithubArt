@@ -21,6 +21,8 @@ class GithubDatePoints(object):
     def get_datetime_start_point(self):
 
         date_point = datetime.today()
+        date_point = date_point + relativedelta(weeks=1)
+
         weekday = date_point.weekday()
 
         if weekday != 6:
