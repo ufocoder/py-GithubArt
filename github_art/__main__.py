@@ -8,9 +8,9 @@ parser.add_option('--string', action='store', type='string', \
                   dest='string', default=None, \
                   help='Art string for Github Contributions table'
 )
-parser.add_option('--size', action='store', type='string', \
-                  dest='size', default=2, \
-                  help='Size of string\'s letters'
+parser.add_option('--dictionary', action='store', type='string', \
+                  dest='dictionary', default='letters', \
+                  help='Letter dictionary '
 )
 parser.add_option('--project', action='store', type='string', \
                   dest='project', help='Github git URL'
