@@ -1,0 +1,11 @@
+[run]
+branch = True
+
+[paths]
+source =
+    github_art/
+omit =
+    github_art/tests/*
+
+[report]
+ignore_errors = True
