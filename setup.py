@@ -8,5 +8,6 @@ setup(name='github_art',
       author='Sergey Ivanov',
       author_email='xufocoder@gmail.com',
       license='MIT',
+      download_url='https://github.com/ufocoder/py-GithubArt/tarball/master',
       url='https://github.com/ufocoder/py-GithubArt'
 )
