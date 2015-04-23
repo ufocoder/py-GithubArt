@@ -10,7 +10,7 @@ Python project to write string on Contributions Github account table
 Usage
 -----
 
-Install github_art
+Install for PIP:
 ```
 pip install github_art
 ```
