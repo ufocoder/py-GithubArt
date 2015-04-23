@@ -28,7 +28,7 @@ if not options.string:
 if not options.path:
     parser.error('Build git path not given')
 
-if not options.account:
+if not options.dictionary:
     parser.error('Github git URL not given')
 
 git = Github(options.string, options.path, options.dictionary)
