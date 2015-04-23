@@ -8,7 +8,7 @@ class GithubDatePoints(object):
 
     def __init__(self, pixel_set):
         self.__pixel_set = self.__normalize_pixel_set(pixel_set)
-        self.__datetime_start_point = self.__get_datetime_start_point()
+        self.__datetime_start_point = self.get_datetime_start_point()
 
     def __normalize_pixel_set(self, pixel_set):
         size = min(len(pixel_set), self.MAX_HEIGHT)
@@ -18,7 +18,7 @@ class GithubDatePoints(object):
 
         return pixel_set
 
-    def __get_datetime_start_point(self):
+    def get_datetime_start_point(self):
 
         date_point = datetime.today()
         weekday = date_point.weekday()
