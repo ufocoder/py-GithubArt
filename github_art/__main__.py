@@ -31,7 +31,7 @@ if not options.path:
 if not options.account:
     parser.error('Github git URL not given')
 
-git = Github(options.string, options.path, options.size)
+git = Github(options.string, options.path, options.dictionary)
 git.initialite()
 if len(options.project) > 0:
     git.set_account(options.project)

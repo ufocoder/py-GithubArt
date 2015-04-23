@@ -6,9 +6,9 @@ from pixelsets import LettersPixelSet
 
 
 class Github(object):
-    def __init__(self, string, cwd, size=1):
+    def __init__(self, string, cwd, dictionary):
         self.__string = string
-        self.__size = size
+        self.__dictionary = dictionary
         self.__cwd = os.path.abspath(cwd)
         self.commands = []
 
@@ -28,7 +28,7 @@ class Github(object):
 
     def initialite(self):
 
-        pixel_set = LettersPixelSet(self.__string, self.__size).get_pixel_set()
+        pixel_set = LettersPixelSet(self.__string, self.__dictionary).get_pixel_set()
         date_points = GithubDatePoints(pixel_set).get_date_points()
 
         self.__git_init()
