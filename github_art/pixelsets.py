@@ -1,5 +1,4 @@
-import letters
-import letters2x
+import importlib
 
 
 class PixetSet(object):
@@ -8,25 +7,24 @@ class PixetSet(object):
 
 
 class LettersPixelSet(PixetSet):
-    def __init__(self, string, size=1):
-        self.__letters = self.__load_letters(size)
+    def __init__(self, string, dictionary):
+        self.__letters = self.__load_letters(dictionary)
         self.__pixel_set = self.__form_pixel_set(str(string).lower())
         self.__pixel_set = self.__normalize_pixel_set(self.__pixel_set)
 
     def get_pixel_set(self):
         return self.__pixel_set
 
-    def __load_letters(self, size=1):
-        if size == 2:
-            return letters2x
-        else:
-            return letters
+    def __load_letters(self, dictionary):
+        return importlib.import_module('github_art.dictionaries.' + dictionary)
 
     def __form_pixel_set(self, string):
         pixel_set = ()
         space_pixel_set = self.__get_space_pixel_set()
-        for letter in string:
-            pixel_set = pixel_set + (space_pixel_set, self.__get_letter_position(letter), )
+
+        for index, letter in enumerate(string):
+            pixel_set = pixel_set + (space_pixel_set, self.__get_letter_position(letter), ) if index > 0 \
+                else (self.__get_letter_position(letter), )
 
         return pixel_set
 
