@@ -7,7 +7,7 @@ from github_art.dictionaries import alphanumeric, alphanumeric2x
 @pytest.mark.parametrize('dictionary', [alphanumeric, alphanumeric2x])
 def test_alphabet_letters(dictionary):
     for character in string.lowercase:
-        assert getattr(dictionary, character)
+        assert getattr(dictionary.characters, character)
 
 
 @pytest.mark.parametrize('dictionary', [alphanumeric, alphanumeric2x])
