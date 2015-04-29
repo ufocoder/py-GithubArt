@@ -33,6 +33,6 @@ python github_art/github_art/main.py \
 Options
 -------
 * string - your string [required parameter]
-* dictionary - letters or letters2x
+* dictionary - alphanumeric or alphanumeric2x
 * path - there's a path to your github project [required parameter]
 * project - URL to your github project [required parameter]

@@ -12,7 +12,7 @@ def normalize(pixel_set, heigth):
     return rows
 
 
-@pytest.mark.parametrize('dictionary', ['letters', 'letters2x'])
+@pytest.mark.parametrize('dictionary', ['alphanumeric', 'alphanumeric2x'])
 def test_one_letter_pixelset(dictionary):
     letters = importlib.import_module('github_art.dictionaries.' + dictionary)
     pixel_set = LettersPixelSet('a', dictionary)
@@ -20,7 +20,7 @@ def test_one_letter_pixelset(dictionary):
     assert letters.a == pixels
 
 
-@pytest.mark.parametrize('dictionary', ['letters', 'letters2x'])
+@pytest.mark.parametrize('dictionary', ['alphanumeric', 'alphanumeric2x'])
 def test_two_letter_pixelset(dictionary):
     letters = importlib.import_module('github_art.dictionaries.' + dictionary)
     pixelset = LettersPixelSet('ab', dictionary)
