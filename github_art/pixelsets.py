@@ -1,6 +1,5 @@
 import importlib
 
-
 class PixetSet(object):
     def get_pixel_set(self):
         pass
@@ -22,17 +21,17 @@ class LettersPixelSet(PixetSet):
         pixel_set = ()
         space_pixel_set = self.__get_space_pixel_set()
 
-        for index, letter in enumerate(string):
-            pixel_set = pixel_set + (space_pixel_set, self.__get_letter_position(letter), ) if index > 0 \
-                else (self.__get_letter_position(letter), )
+        for index, character in enumerate(string):
+            pixel_set = pixel_set + (space_pixel_set, self.__get_character_position(character), ) if index > 0 \
+                else (self.__get_character_position(character), )
 
         return pixel_set
 
     def __normalize_pixel_set(self, pixel_set):
         rows = [[] for _ in range(self.__dictionary.HEIGHT)]
-        for letter in pixel_set:
+        for character in pixel_set:
             for i in range(self.__dictionary.HEIGHT):
-                rows[i] = rows[i] + letter[i]
+                rows[i] = rows[i] + character[i]
 
         return rows
 
@@ -42,8 +41,9 @@ class LettersPixelSet(PixetSet):
         except AttributeError:
             raise SystemExit('Space letter is not exists')
 
-    def __get_letter_position(self, letter):
+    def __get_character_position(self, character):
+
         try:
-            return getattr(self.__dictionary, letter)
+            return self.__dictionary.characters.get(character)
         except AttributeError:
-            raise SystemExit('Letter ' + letter + ' is not exists')
+            raise SystemExit('Dictionary characters\'re not exists')

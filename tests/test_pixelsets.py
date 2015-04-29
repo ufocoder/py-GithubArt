@@ -17,7 +17,7 @@ def test_one_letter_pixelset(dictionary):
     letters = importlib.import_module('github_art.dictionaries.' + dictionary)
     pixel_set = LettersPixelSet('a', dictionary)
     pixels = pixel_set.get_pixel_set()
-    assert letters.a == pixels
+    assert letters.characters.get('a') == pixels
 
 
 @pytest.mark.parametrize('dictionary', ['alphanumeric', 'alphanumeric2x'])
@@ -25,7 +25,7 @@ def test_two_letter_pixelset(dictionary):
     letters = importlib.import_module('github_art.dictionaries.' + dictionary)
     pixelset = LettersPixelSet('ab', dictionary)
     pixels_from_pixelset = pixelset.get_pixel_set()
-    letters_set = (letters.a, letters.space, letters.b)
+    letters_set = (letters.characters.get('a'), letters.space, letters.characters.get('b'))
     pixels_from_letters = normalize(letters_set, letters.HEIGHT)
     assert pixels_from_pixelset == pixels_from_letters
 
