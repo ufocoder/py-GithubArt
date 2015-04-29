@@ -9,6 +9,10 @@ def test_alphabet_letters(dictionary):
     for character in string.lowercase:
         assert dictionary.characters.get(character)
 
+@pytest.mark.parametrize('dictionary', [alphanumeric, alphanumeric2x])
+def test_numeric_letters(dictionary):
+    for number in range(0, 9):
+        assert not dictionary.characters.get(str(number)) is None
 
 @pytest.mark.parametrize('dictionary', [alphanumeric, alphanumeric2x])
 def test_height_exists(dictionary):
