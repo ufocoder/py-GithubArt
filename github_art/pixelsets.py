@@ -8,14 +8,14 @@ class PixetSet(object):
 
 class LettersPixelSet(PixetSet):
     def __init__(self, string, dictionary):
-        self.__letters = self.__load_letters(dictionary)
+        self.__dictionary = self.__load_dictionary(dictionary)
         self.__pixel_set = self.__form_pixel_set(str(string).lower())
         self.__pixel_set = self.__normalize_pixel_set(self.__pixel_set)
 
     def get_pixel_set(self):
         return self.__pixel_set
 
-    def __load_letters(self, dictionary):
+    def __load_dictionary(self, dictionary):
         return importlib.import_module('github_art.dictionaries.' + dictionary)
 
     def __form_pixel_set(self, string):
@@ -29,21 +29,21 @@ class LettersPixelSet(PixetSet):
         return pixel_set
 
     def __normalize_pixel_set(self, pixel_set):
-        rows = [[] for _ in range(self.__letters.HEIGHT)]
+        rows = [[] for _ in range(self.__dictionary.HEIGHT)]
         for letter in pixel_set:
-            for i in range(self.__letters.HEIGHT):
+            for i in range(self.__dictionary.HEIGHT):
                 rows[i] = rows[i] + letter[i]
 
         return rows
 
     def __get_space_pixel_set(self):
         try:
-            return getattr(self.__letters, 'space')
+            return getattr(self.__dictionary, 'space')
         except AttributeError:
             raise SystemExit('Space letter is not exists')
 
     def __get_letter_position(self, letter):
         try:
-            return getattr(self.__letters, letter)
+            return getattr(self.__dictionary, letter)
         except AttributeError:
             raise SystemExit('Letter ' + letter + ' is not exists')
