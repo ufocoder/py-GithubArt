@@ -24,8 +24,8 @@ mkdir /Users/user/build
 And run python github_art, there's an example of script usage:
 
 ```
-python github_art/github_art/main.py \
-    --string demo \
+python github_art \
+    --string ufocoder \
     --path /Users/user/build \
     --project https://github.com/ufocoder/py2-Github-FakeContributions.git
 ```
