@@ -12,14 +12,12 @@ def test_alphabet_letters(dictionary):
 
 @pytest.mark.parametrize('dictionary', [letters, letters2x])
 def test_height_exists(dictionary):
-    for character in string.lowercase:
-        assert getattr(dictionary, 'HEIGHT')
+    assert getattr(dictionary, 'HEIGHT')
 
 
 @pytest.mark.parametrize('dictionary', [letters, letters2x])
 def test_space_letter(dictionary):
-    for character in string.lowercase:
-        assert getattr(dictionary, 'space')
+    assert getattr(dictionary, 'space')
 
 
 if __name__ == '__main__':
