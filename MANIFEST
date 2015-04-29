@@ -7,5 +7,5 @@ github_art/datepoints.py
 github_art/github.py
 github_art/pixelsets.py
 github_art/dictionaries/__init__.py
-github_art/dictionaries/letters.py
-github_art/dictionaries/letters2x.py
+github_art/dictionaries/alphanumeric.py
+github_art/dictionaries/alphanumeric2x.py
