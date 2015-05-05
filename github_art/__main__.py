@@ -9,7 +9,7 @@ parser.add_option('--string', action='store', type='string', \
                   help='Art string for Github Contributions table'
 )
 parser.add_option('--dictionary', action='store', type='string', \
-                  dest='dictionary', default='letters', \
+                  dest='dictionary', default='alphanumeric', \
                   help='Letter dictionary '
 )
 parser.add_option('--project', action='store', type='string', \
