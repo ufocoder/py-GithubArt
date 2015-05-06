@@ -17,14 +17,13 @@ class Github(object):
         self.commands.append(['git', 'show-ref'])
 
     def __git_commit(self, datetime_point):
-
         # Date formats, URL: http://git-scm.com/docs/git-commit
         file = datetime_point.strftime("%Y-%m-%d_%H-%M-%S")
         date = datetime_point.strftime("%Y-%m-%d %H:%M:%S %z")
 
         self.commands.append(['touch', file])
         self.commands.append(['git', 'add', file])
-        self.commands.append(['git', 'commit', '--message="initial commit"', '--date="' + date + '"'])
+        self.commands.append(['git', 'commit', '--message="' + file + '"', '--date="' + date + '"'])
 
     def initialite(self):
 
@@ -36,8 +35,9 @@ class Github(object):
         for date_point in date_points:
             self.__git_commit(date_point)
 
-    def set_account(self, account):
-        self.commands.append(['git', 'remote', 'add', 'origin', account])
+    def set_account(self, username, proejct):
+        github_url = 'https://' + username + '@github.com/' + username + '/' + proejct + '.git'
+        self.commands.append(['git', 'remote', 'add', 'origin', github_url])
         self.commands.append(['git', 'push', '-u', 'origin', 'master'])
 
     def run(self):

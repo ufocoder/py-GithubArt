@@ -5,19 +5,20 @@ from github import Github
 
 parser = optparse.OptionParser(conflict_handler="resolve")
 parser.add_option('--string', action='store', type='string', \
-                  dest='string', default=None, \
-                  help='Art string for Github Contributions table'
+                  dest='string', help='Art string for Github Contributions table'
 )
 parser.add_option('--dictionary', action='store', type='string', \
                   dest='dictionary', default='alphanumeric', \
                   help='Letter dictionary '
 )
-parser.add_option('--project', action='store', type='string', \
-                  dest='project', help='Github git URL'
-)
 parser.add_option('--path', action='store', type='string', \
-                  dest='path', default='../build', \
-                  help='Path to github new project'
+                  dest='path', help='Path to github new project'
+)
+parser.add_option('--project', action='store', type='string', \
+                  dest='project', help='Github Proejct Name'
+)
+parser.add_option('--username', action='store', type='string', \
+                  dest='username', help='Github Username'
 )
 
 options, arguments = parser.parse_args()
@@ -33,6 +34,8 @@ if not options.dictionary:
 
 git = Github(options.string, options.path, options.dictionary)
 git.initialite()
-if len(options.project) > 0:
-    git.set_account(options.project)
+
+if options.username and options.project:
+    git.set_account(options.username, options.project)
+
 git.run()
