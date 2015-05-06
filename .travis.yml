@@ -5,6 +5,9 @@ install:
   - pip install .
   - pip install -r requirements/base.txt
   - pip install -r requirements/development.txt
+  - pip install pep8 --use-mirrors
+before_script:
+  - "pep8 --ignore=E501 github_art"
 script:
   py.test --cov-report xml --cov github_art/ tests/
 after_success:
