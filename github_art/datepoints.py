@@ -36,6 +36,7 @@ class GithubDatePoints(object):
         for rows in range(len(self.__pixel_set)):
             for col in range(len(self.__pixel_set[rows])):
                 if self.__pixel_set[rows][col] != 0:
-                    dates.append(self.__datetime_start_point + relativedelta(weeks=col, days=rows))
+                    dates.append(self.__datetime_start_point +
+                                 relativedelta(weeks=col, days=rows))
 
         return dates
