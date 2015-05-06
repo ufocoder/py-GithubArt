@@ -6,29 +6,55 @@ Github Art
 
 Python project to write string on Contributions Github account table
 
-![Github Contributions](docs/contributions.png)
-
 Usage
 -----
 
-Install from PIP:
+
+1. Clone project and move to project folder:
+
 ```
-pip install github_art
+git clone https://github.com/ufocoder/py-GithubArt.git
+cd py-GithubArt
 ```
 
-Create folder to build git project:
+2. Create folder to build git project, for example:
 ```
-mkdir /Users/user/build
+mkdir ~/build
 ```
 
-And run python github_art, there's an example of script usage:
+3. Create github project
+
+4. Run python github_art, there's an example of script usage:
 
 ```
 python github_art \
-    --string ufocoder \
-    --path /Users/user/build \
-    --project https://github.com/ufocoder/py2-Github-FakeContributions.git
+    --string abc123 \
+    --path ~/build \
+    --username network-batman \
+    --project gotham-city
 ```
+
+Result Contributions table:
+
+![Github Contributions](docs/abc123x1.png)
+
+You could use other dictionary to write:
+
+```
+python github_art \
+    --string abcdef012345 \
+    --dictionary alphanumeric2x \
+    --path ~/build \
+    --username network-batman \
+    --project gotham-city
+```
+
+Result Contributions table:
+
+![Github Contributions](docs/abcef012345x2.png)
+
+There's [example](https://github.com/network-batman) of second github_art usage
+
 
 Options
 -------
