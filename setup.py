@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='github_art',
-      version='0.3',
+      version='0.3.1',
       packages=['github_art','github_art.dictionaries'],
       keywords = "github art contributions writer",
       description='Github Contributions table Writer. Just for fun',
