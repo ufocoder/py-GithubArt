@@ -43,7 +43,7 @@ You could use other dictionary to write:
 
 ```
 python github_art \
-    --string abcdef012345 \
+    --string abcef012345 \
     --dictionary alphanumeric2x \
     --path ~/build \
     --username network-batman \
